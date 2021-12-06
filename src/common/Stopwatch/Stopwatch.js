@@ -6,10 +6,14 @@ const Stopwatch = ({watchOn}) => {
         <div className={styles.stopwatch}>
             <div className={styles.button1}/>
             <div className={styles.button2}/>
-            <div className={watchOn && styles.time + " " + styles.t1}/>
-            <div className={watchOn && styles.time + " " + styles.t2}/>
-            <div className={watchOn && styles.time + " " + styles.t3}/>
-            <div className={watchOn && styles.time + " " + styles.t4}/>
+            {watchOn &&
+            <div>
+                <div className={styles.time + " " + styles.t1}/>
+                <div className={styles.time + " " + styles.t2}/>
+                <div className={styles.time + " " + styles.t3}/>
+                <div className={styles.time + " " + styles.t4}/>
+            </div>
+            }
         </div>
     )
 }

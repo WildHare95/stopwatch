@@ -14,10 +14,17 @@ const App = () => {
     const buttonEl = useRef(null)
 
     const handleReset = useCallback(() => {
+        setWatchOn(true)
         setTime(0)
     }, [])
-    const handleStart = useCallback(() => {
-        setWatchOn(prevState => !prevState)
+    const handleStart = useCallback((state) => {
+        if (state.target.innerText === "Start"){
+            setWatchOn(prevState => !prevState)
+        }
+        else {
+            setWatchOn(prevState => !prevState)
+            setTime(0)
+        }
     }, [])
 
     useEffect(() => {
